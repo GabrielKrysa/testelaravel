@@ -41,7 +41,7 @@
                 </ul>
             </div>
         @endif
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>
 </body>
