@@ -9,34 +9,28 @@
 </head>
 <body>
 <div class="container">
-    <h1>Adicionar Novo Produto</h1>
-    <form action="/products" method="post">
+    <h1>Entrar em contato</h1>
+    <form action="/contacts" method="post">
         {{ csrf_field() }}
         <div class="form-group">
-            <label for="title">Nome do Produto</label>
-            <input type="text" class="form-control" id="productName" name="name">
+            <label for="title">Nome</label>
+            <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="form-group">
-            <label for="description">Fabricante</label>
-            <select class="form-control" name="manufactory">
-                <option>Apple</option>
-                <option>Google</option>
-                <option>LG</option>
-                <option>Samsung</option>
-            </select>
+            <label for="title">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
         </div>
         <div class="form-group">
-            <label for="description">Quantidade</label>
-            <input type="text" class="form-control" id="productAmount" name="amount"/>
+            <label for="description">Telefone</label>
+            <input type="text" class="form-control" id="phone" name="phone"/>
         </div>
         <div class="form-group">
-            <label for="description">Produto Diponível</label><br/>
-            <label class="radio-inline"><input type="radio" name="available" value="1"> Sim</label>
-            <label class="radio-inline"><input type="radio" name="available" value="0"> Não</label>
+            <label for="title">Assunto</label>
+            <input type="text" class="form-control" id="subject" name="subject">
         </div>
         <div class="form-group">
-            <label for="description">Descrição</label>
-            <textarea type="text" class="form-control" id="description" name="description"></textarea>
+            <label for="description">Mensagem</label>
+            <textarea type="text" class="form-control" id="msg" name="msg"></textarea>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">
