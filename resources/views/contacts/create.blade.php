@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
+@extends('layouts.app')
+
+@section('content')
+
 <body>
 <div class="container">
     <h1>Entrar em contato</h1>
@@ -25,7 +18,6 @@
         <div class="form-group">
             <label for="description">Telefone</label>
             <input type="tel" class="form-control" id="phone" name="phone"/>
-            <script>$("#phone").mask("(99) 9999-9999");</script>
         </div>
         <div class="form-group">
             <label for="title">Assunto</label>
@@ -48,4 +40,5 @@
     </form>
 </div>
 </body>
-</html>
+@endsection
+
