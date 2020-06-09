@@ -18,10 +18,19 @@ Route::post ('contacts', 'ContactController@show');
 Route::get('/products/create', 'ProductController@create');
 Route::post('/products', 'ProductController@store');
 Route::get('/products', 'ProductController@index');
+
 Route::get('books/create', 'BookController@create');
-Route::get('books', 'BookController@index');
+Route::get('books', 'BookController@index')->name('books.index');
 Route::post('books', 'BookController@store');
+Route::get('books/edit', 'BookController@edit')->name('books.edit');
+Route::get('books/show', 'BookController@show')->name('books.show');
+Route::patch('books', 'BookController@index');
+
+//Route::resource('books', 'BookController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+

@@ -20,6 +20,7 @@
             <th scope="col">Autor</th>
             <th scope="col">Dono</th>
             <th scope="col">Data de cadastro</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -30,6 +31,12 @@
                 <td>{{$book->author}}</td>
                 <td>{{$book->owner}}</td>
                 <td>{{$book->created_at}}</td>
+                <td>
+                    <p>
+                        <a href="{{ route('books.show', ['exe' => $book->id]) }}" class="btn btn-primary">Ver</a>
+                        <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary">Editar</a>
+                    </p>
+                </td>
             </tr>
         @endforeach
         </tbody>
