@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('contacts/create', 'ContactController@create');
 Route::post('contacts', 'ContactController@show');
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/products/create', 'ProductController@create');
 Route::post('/products', 'ProductController@store');
 Route::get('/products', 'ProductController@index');
