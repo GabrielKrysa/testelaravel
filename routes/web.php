@@ -17,9 +17,8 @@ Route::post ('contacts', 'ContactController@show');
 Route::get('/products/create', 'ProductController@create');
 Route::post('/products', 'ProductController@store');
 Route::get('/products', 'ProductController@index');
+/*
 
-Route::get('', 'BookController@index');
-Route::get('home', 'BookController@index');
 Route::get('books/create', 'BookController@create');
 Route::get('books', 'BookController@index')->name('books.index');
 Route::post('books', 'BookController@store');
@@ -27,9 +26,10 @@ Route::get('books/edit/{id}', 'BookController@edit')->name('books.edit');
 Route::get('books/show/{id}', 'BookController@show')->name('books.show');
 Route::post('books/edit/{id}', 'BookController@update')->name('books.update');
 Route::delete('books/delete/{id}', 'BookController@destroy')->name('books.destroy');
-
-//Route::resource('books', 'BookController');
-
+*/
+Route::resource('books', 'BookController');
+Route::get('', 'BookController@index');
+Route::get('home', 'BookController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

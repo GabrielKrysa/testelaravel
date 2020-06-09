@@ -4,8 +4,9 @@
     <body>
     <div class="container">
         <h1>Editar livro.</h1>
-        <form action="{{ route('books.update', $book->id) }}" method="post">
-            {{ csrf_field() }}
+        <form action="{{ route('books.update', $book) }}" method="post">
+            @method('put')
+            @csrf
             <div class="form-group">
                 <label for="title">Título</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $book->title }}">

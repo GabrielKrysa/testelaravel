@@ -7,7 +7,7 @@
             {{ Session::get('flash_message') }}
         </div>
     @endif
-    <form action="books/create" method="get">
+    <form action="{{ route('books.create') }}" method="get">
         <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
             Novo livro
         </button>
@@ -33,8 +33,8 @@
                 <td>{{$book->created_at}}</td>
                 <td>
                     <p>
-                        <a href="{{ route('books.show', $book->id) }}" class="btn btn-primary">Ver</a>
-                        <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary">Editar</a>
+                        <a href="{{ route('books.show', $book) }}" class="btn btn-primary">Ver</a>
+                        <a href="{{ route('books.edit', $book) }}" class="btn btn-primary">Editar</a>
                     </p>
                 </td>
             </tr>

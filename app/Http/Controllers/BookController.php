@@ -42,23 +42,23 @@ class BookController extends Controller
 
     }
 
-    public function show($id)
+    public function show($book)
     {
-        $book = Book::findOrFail($id);
+        $book = Book::findOrFail($book);
 
         return view('books.show', compact('book', $book));
     }
 
-    public function edit($id)
+    public function edit($book)
     {
-        $book = Book::findOrFail($id);
+        $book = Book::findOrFail($book);
 
         return view('books.edit', compact('book', $book));
     }
 
-    public function update($id, Request $request)
+    public function update($book, Request $request)
     {
-        $book = Book::findOrFail($id);
+        $book = Book::findOrFail($book);
 
         $validateData = $request->validate([
             'title' => 'required',
@@ -73,9 +73,9 @@ class BookController extends Controller
         return redirect('/books');
     }
 
-    public function destroy($id)
+    public function destroy($book)
     {
-        $book = Book::findOrFail($id);
+        $book = Book::findOrFail($book);
 
         $book->delete();
 

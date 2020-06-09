@@ -12,12 +12,12 @@
                         Voltar
                     </button>
                 </form>
-                <form action="{{ route('books.edit', $book->id) }}" method="get">
+                <form action="{{ route('books.edit', $book) }}" method="get">
                     <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
                         Editar
                     </button>
                 </form>
-                <form action="{{ route('books.destroy', ['id' => $book->id]) }}" method="post">
+                <form action="{{ route('books.destroy', $book) }}" method="post">
                     @method('delete')
                     @csrf
                     <button type="submit" class="btn btn-danger" style="margin-left: 10px; margin-bottom: 10px">

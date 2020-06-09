@@ -4,7 +4,7 @@
     <body>
     <div class="container">
         <h1>Cadastrar novo livro.</h1>
-        <form action="/books" method="post">
+        <form action="{{ route('books.store') }}" method="post">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="title">Título</label>
