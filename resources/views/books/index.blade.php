@@ -5,6 +5,11 @@
     @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif
+    <form action="books/create" method="get">
+        <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
+            Novo livro
+        </button>
+    </form>
     <table class="table">
         <thead class="thead-dark">
         <tr>
