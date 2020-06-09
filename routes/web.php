@@ -22,9 +22,9 @@ Route::get('/products', 'ProductController@index');
 Route::get('books/create', 'BookController@create');
 Route::get('books', 'BookController@index')->name('books.index');
 Route::post('books', 'BookController@store');
-Route::get('books/edit', 'BookController@edit')->name('books.edit');
-Route::get('books/show', 'BookController@show')->name('books.show');
-Route::patch('books', 'BookController@index');
+Route::get('books/edit/{id}', 'BookController@edit')->name('books.edit');
+Route::get('books/show/{id}', 'BookController@show')->name('books.show');
+Route::post('books/edit/{id}', 'BookController@update')->name('books.update');
 
 //Route::resource('books', 'BookController');
 

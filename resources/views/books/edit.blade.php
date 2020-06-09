@@ -4,15 +4,15 @@
     <body>
     <div class="container">
         <h1>Editar livro.</h1>
-        <form action="/books" method="ge">
+        <form action="{{ route('books.update', $book->id) }}" method="post">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="title">Título</label>
-                <input type="text" class="form-control" id="title" name="title">
+                <input type="text" class="form-control" id="title" name="title" value="{{ $book->title }}">
             </div>
             <div class="form-group">
                 <label for="title">Autor</label>
-                <input type="text" class="form-control" id="author" name="author">
+                <input type="text" class="form-control" id="author" name="author" value="{{ $book->author }}">
             </div>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary">Editar</button>
         </form>
     </div>
     </body>

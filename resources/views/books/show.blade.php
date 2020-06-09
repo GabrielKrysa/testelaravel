@@ -12,12 +12,12 @@
                         Voltar
                     </button>
                 </form>
-                <form action="{{ route('books.edit') }}" method="get">
+                <form action="{{ route('books.edit', $book->id) }}" method="get">
                     <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
                         Editar
                     </button>
                 </form>
-                <form action="{{ route('books.edit') }}" method="get">
+                <form action="{{ route('books.edit', $book->id) }}" method="get">
                     <button type="submit" class="btn btn-danger" style="margin-left: 10px; margin-bottom: 10px">
                         Excluir
                     </button>

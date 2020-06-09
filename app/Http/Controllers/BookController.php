@@ -42,10 +42,39 @@ class BookController extends Controller
 
     }
 
-    public function show()
+    public function show($id)
     {
-        $book = Book::findOrFail(1);
+        $book = Book::findOrFail($id);
 
         return view('books.show', compact('book', $book));
+    }
+
+    public function edit($id)
+    {
+        $book = Book::findOrFail($id);
+
+        return view('books.edit', compact('book', $book));
+    }
+
+    public function update($id, Request $request)
+    {
+
+        $book = Book::findOrFail($id);
+
+
+        $validateData = $request->validate([
+            'title' => 'required',
+            'author' => 'required',
+        ]);
+
+
+        $input = $request->all();
+        $book->fill($input)->save();
+
+
+        Session::flash('flash_message', 'Livro editado com sucesso!');
+
+
+        return redirect('/books');
     }
 }

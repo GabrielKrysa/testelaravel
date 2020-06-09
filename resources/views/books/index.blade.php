@@ -33,7 +33,7 @@
                 <td>{{$book->created_at}}</td>
                 <td>
                     <p>
-                        <a href="{{ route('books.show', ['exe' => $book->id]) }}" class="btn btn-primary">Ver</a>
+                        <a href="{{ route('books.show', $book->id) }}" class="btn btn-primary">Ver</a>
                         <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary">Editar</a>
                     </p>
                 </td>
