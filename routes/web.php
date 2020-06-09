@@ -18,6 +18,9 @@ Route::post ('contacts', 'ContactController@show');
 Route::get('/products/create', 'ProductController@create');
 Route::post('/products', 'ProductController@store');
 Route::get('/products', 'ProductController@index');
+Route::get('books/create', 'BookController@create');
+Route::get('books', 'BookController@index');
+Route::post('books', 'BookController@store');
 
 Auth::routes();
 
