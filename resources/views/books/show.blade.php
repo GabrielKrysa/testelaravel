@@ -17,7 +17,9 @@
                         Editar
                     </button>
                 </form>
-                <form action="{{ route('books.edit', $book->id) }}" method="get">
+                <form action="{{ route('books.destroy', ['id' => $book->id]) }}" method="post">
+                    @method('delete')
+                    @csrf
                     <button type="submit" class="btn btn-danger" style="margin-left: 10px; margin-bottom: 10px">
                         Excluir
                     </button>

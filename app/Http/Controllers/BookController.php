@@ -58,22 +58,28 @@ class BookController extends Controller
 
     public function update($id, Request $request)
     {
-
         $book = Book::findOrFail($id);
-
 
         $validateData = $request->validate([
             'title' => 'required',
             'author' => 'required',
         ]);
 
-
         $input = $request->all();
         $book->fill($input)->save();
 
-
         Session::flash('flash_message', 'Livro editado com sucesso!');
 
+        return redirect('/books');
+    }
+
+    public function destroy($id)
+    {
+        $book = Book::findOrFail($id);
+
+        $book->delete();
+
+        Session::flash('flash_message', 'Livro excluído com sucesso!');
 
         return redirect('/books');
     }

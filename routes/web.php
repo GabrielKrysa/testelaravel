@@ -25,6 +25,7 @@ Route::post('books', 'BookController@store');
 Route::get('books/edit/{id}', 'BookController@edit')->name('books.edit');
 Route::get('books/show/{id}', 'BookController@show')->name('books.show');
 Route::post('books/edit/{id}', 'BookController@update')->name('books.update');
+Route::delete('books/delete/{id}', 'BookController@destroy')->name('books.destroy');
 
 //Route::resource('books', 'BookController');
 
