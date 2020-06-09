@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Book;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,9 @@ class BookController extends Controller
         $book['owner'] = auth()->user()->name;
 
         Book::create($book);
+
+        Session::flash('flash_message', 'Livro cadastrado com sucesso!');
+
         return redirect('/books');
     }
 

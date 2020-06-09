@@ -2,8 +2,10 @@
 
 @section('content')
     <body>
-    @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    @if(Session::has('flash_message'))
+        <div class="alert alert-success">
+            {{ Session::get('flash_message') }}
+        </div>
     @endif
     <form action="books/create" method="get">
         <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
