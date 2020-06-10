@@ -17,6 +17,7 @@ Route::resource('books', 'BookController');
 Route::get('/', 'BookController@index');
 Route::get('/home', 'BookController@index');
 Route::get('/user/books', 'BookController@indexByUser')->name('user.books');
+Route::get('books/{book}/change', 'BookController@changeStatus')->name('books.change');
 Auth::routes();
 
 

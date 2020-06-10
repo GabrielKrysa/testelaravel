@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Auth;
 use Session;
+use DateTime;
 use App\Book;
 use Illuminate\Http\Request;
 
@@ -91,5 +92,26 @@ class BookController extends Controller
         $books = User::find(Auth::user()->id)->books;
 
         return view('user.books', compact('books', $books));
+    }
+
+    public function changeStatus($book)
+    {
+        $book = Book::findOrFail($book);
+
+        $now = new DateTime("now", new \DateTimeZone('America/Sao_Paulo'));
+        $now->format('Y-m-d H:i:sP');
+        if($book->available){
+            $book->available = 0;
+            $book->withdrawn_at = $now;
+        } else {
+            $book->available = 1;
+            $book->returned_at = $now;
+        }
+
+        $book->save();
+
+        Session::flash('flash_message', $book->available ? 'Livro retornado com sucesso!' : 'Livro retirado com sucesso!');
+
+        return redirect('/books');
     }
 }
