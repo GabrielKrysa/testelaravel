@@ -18,7 +18,8 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('owner');
-            $table->id('user_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreing('user_id')->references('user')->on('id');
             $table->timestamp('withdrawn_at');
             $table->timestamp('returned_at');
             $table->boolean('available');
