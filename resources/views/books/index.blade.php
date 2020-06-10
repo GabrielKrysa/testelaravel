@@ -8,16 +8,12 @@
         </div>
     @endif
     <div class="row" style="margin-left: 10px; margin-bottom: 10px">
-        <form action="{{ route('books.create') }}" method="get">
-            <button type="submit" class="btn btn-dark" >
-                Novo livro
-            </button>
-        </form>
-        <form action="{{ route('books.indexByUser') }}" method="get">
-            <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
-                Meus livros
-            </button>
-        </form>
+        <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
+            <a class="text-white" href="{{ route('books.create') }}">Cadastrar livro</a>
+        </button>
+        <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
+            <a class="text-white" href="{{ route('user.books') }}">Meus livros</a>
+        </button>
     </div>
     <table class="table">
         <thead class="thead-dark">
@@ -36,7 +32,7 @@
                 <th scope="row">{{$book->id}}</th>
                 <td>{{$book->title}}</td>
                 <td>{{$book->author}}</td>
-                <td>{{$book->user->name}}</td>
+                <td>{{($book->user)->name}}</td>
                 <td>{{$book->created_at}}</td>
                 <td>
                     <p>

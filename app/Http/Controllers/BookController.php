@@ -38,11 +38,8 @@ class BookController extends Controller
 
     public function index()
     {
-        $books = Book::all();
-        foreach ($books as $book)
-        {
-            $book['user'] = User::find($book->user_id);
-        }
+        $books = Book::with(['user'])->get();
+
         return view('books.index',compact('books', $books));
 
     }
@@ -93,6 +90,6 @@ class BookController extends Controller
     {
         $books = User::find(Auth::user()->id)->books;
 
-        return view('books.indexByUser', compact('books', $books));
+        return view('user.books', compact('books', $books));
     }
 }

@@ -8,29 +8,19 @@
         </div>
     @endif
     <div class="row" style="margin-left: 10px; margin-bottom: 10px">
-        <form action="{{ route('books.create') }}" method="get">
-            <button type="submit" class="btn btn-dark">
-                Novo livro
-            </button>
-        </form>
-        <form action="{{ route('books.index') }}" method="get">
-            <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
-                Voltar
-            </button>
-        </form>
-    </div>
-    <form action="{{ route('books.create') }}" method="get">
         <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
-            Novo livro
+            <a class="text-white" href="{{ route('books.create') }}">Cadastrar livro</a>
         </button>
-    </form>
+        <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
+            <a class="text-white" href="{{ route('books.index') }}">Voltar</a>
+        </button>
+    </div>
     <table class="table">
         <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Título</th>
             <th scope="col">Autor</th>
-            <th scope="col">Dono</th>
             <th scope="col">Data de cadastro</th>
             <th scope="col"></th>
         </tr>
@@ -41,7 +31,6 @@
                 <th scope="row">{{$book->id}}</th>
                 <td>{{$book->title}}</td>
                 <td>{{$book->author}}</td>
-                <td>{{$book->owner}}</td>
                 <td>{{$book->created_at}}</td>
                 <td>
                     <p>

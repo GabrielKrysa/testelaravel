@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('books', 'BookController');
 Route::get('/', 'BookController@index');
 Route::get('/home', 'BookController@index');
-Route::get('/books/user', 'BookController@indexByUser')
-    ->name('books.indexByUser');
+Route::get('/user/books', 'BookController@indexByUser')->name('user.books');
 Auth::routes();
 
 
