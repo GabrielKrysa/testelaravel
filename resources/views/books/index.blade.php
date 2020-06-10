@@ -23,6 +23,7 @@
             <th scope="col">Autor</th>
             <th scope="col">Dono</th>
             <th scope="col">Data de cadastro</th>
+            <th scope="col">Status</th>
             <th scope="col"></th>
         </tr>
         </thead>
@@ -34,6 +35,7 @@
                 <td>{{$book->author}}</td>
                 <td>{{($book->user)->name}}</td>
                 <td>{{$book->created_at}}</td>
+                <td>{{$book->available ? 'Disponível' : 'Emprestado' }}</td>
                 <td>
                     <p>
                         <a href="{{ route('books.show', $book) }}" class="btn btn-primary">Ver</a>
