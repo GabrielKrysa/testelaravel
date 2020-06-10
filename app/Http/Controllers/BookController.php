@@ -28,8 +28,7 @@ class BookController extends Controller
         ]);
 
         $book = $validateData;
-        $book['owner'] = Auth::user()->name;
-
+        $book['user_id'] = Auth::user()->id;
         Book::create($book);
 
         Session::flash('flash_message', 'Livro cadastrado com sucesso!');
@@ -40,6 +39,10 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
+        foreach ($books as $book)
+        {
+            $book['user'] = User::find($book->user_id);
+        }
         return view('books.index',compact('books', $books));
 
     }

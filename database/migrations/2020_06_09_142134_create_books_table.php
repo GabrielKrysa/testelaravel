@@ -17,12 +17,11 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('author');
-            $table->string('owner');
             $table->bigInteger('user_id')->unsigned();
-            $table->foreing('user_id')->references('user')->on('id');
-            $table->timestamp('withdrawn_at');
-            $table->timestamp('returned_at');
-            $table->boolean('available');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamp('withdrawn_at')->nullable();
+            $table->timestamp('returned_at')->nullable();
+            $table->boolean('available')->default(1);
             $table->timestamps();
         });
     }

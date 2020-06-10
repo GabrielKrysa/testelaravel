@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected $fillable = ['title', 'author', 'owner'];
+    protected $fillable = ['title', 'author', 'user_id'];
 
     public function user()
     {
@@ -18,18 +18,9 @@ class Book extends Model
         return ucwords($value);
     }
 
-    public function getOwnerAttribute($value)
-    {
-        return ucwords($value);
-    }
-
     public function setAuthorAttribute($value)
     {
         $this->attributes['author'] = ucwords($value);
     }
 
-    public function setOwnerAttribute($value)
-    {
-        $this->attributes['owner'] = ucwords($value);
-    }
 }
