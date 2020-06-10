@@ -8,6 +8,11 @@ class Book extends Model
 {
     protected $fillable = ['title', 'author', 'owner'];
 
+    public function user()
+    {
+        return $this->hasOne('App\User');
+    }
+
     public function getAuthorAttribute($value)
     {
         return ucwords($value);
