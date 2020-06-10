@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Auth;
 use Session;
 use App\Book;
 use Illuminate\Http\Request;
@@ -26,7 +28,7 @@ class BookController extends Controller
         ]);
 
         $book = $validateData;
-        $book['owner'] = auth()->user()->name;
+        $book['owner'] = Auth::user()->name;
 
         Book::create($book);
 
@@ -65,7 +67,7 @@ class BookController extends Controller
             'author' => 'required',
         ]);
 
-        $input = $request->all();
+        $input = $validateData;
         $book->fill($input)->save();
 
         Session::flash('flash_message', 'Livro editado com sucesso!');
@@ -82,5 +84,12 @@ class BookController extends Controller
         Session::flash('flash_message', 'Livro excluído com sucesso!');
 
         return redirect('/books');
+    }
+
+    public function indexByUser()
+    {
+        $books = User::find(Auth::user()->id)->books;
+
+        return view('books.indexByUser', compact('books', $books));
     }
 }

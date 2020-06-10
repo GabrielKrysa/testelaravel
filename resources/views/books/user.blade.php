@@ -9,16 +9,21 @@
     @endif
     <div class="row" style="margin-left: 10px; margin-bottom: 10px">
         <form action="{{ route('books.create') }}" method="get">
-            <button type="submit" class="btn btn-dark" >
+            <button type="submit" class="btn btn-dark">
                 Novo livro
             </button>
         </form>
-        <form action="{{ route('books.indexByUser') }}" method="get">
+        <form action="{{ route('books.index') }}" method="get">
             <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
-                Meus livros
+                Voltar
             </button>
         </form>
     </div>
+    <form action="{{ route('books.create') }}" method="get">
+        <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
+            Novo livro
+        </button>
+    </form>
     <table class="table">
         <thead class="thead-dark">
         <tr>
