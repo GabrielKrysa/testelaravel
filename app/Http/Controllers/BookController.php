@@ -110,7 +110,7 @@ class BookController extends Controller
 
         $book->save();
 
-        Session::flash('flash_message', $book->available ? 'Livro retornado com sucesso!' : 'Livro retirado com sucesso!');
+        Session::flash('flash_message', $book->available ? 'Livro devolvido com sucesso!' : 'Livro retirado com sucesso!');
 
         return redirect('/books');
     }
