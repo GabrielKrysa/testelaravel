@@ -23,8 +23,11 @@
                     </ul>
                 </div>
             @endif
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary col-md-1">Cadastrar</button>
         </form>
+        <a class="btn btn-dark col-md-1" style="margin-top: 10px" href="{{ route('books.index') }}">
+            Voltar
+        </a>
     </div>
     </body>
 @endsection

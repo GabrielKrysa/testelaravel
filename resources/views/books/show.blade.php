@@ -13,17 +13,15 @@
                     : 'Retirado em '.$book->withdrawn_at
                     }}
                 </p>
-                <button type="submit" class="btn btn-primary col-md-1" style="margin-left: 10px; margin-bottom: 10px">
-                    <a class="text-white" href="{{ route('books.change', $book) }}">
-                        {{ $book->available? 'Retirar' : 'Devolver' }}
-                    </a>
-                </button>
-                <button type="submit" class="btn btn-dark col-md-1" style="margin-left: 10px; margin-bottom: 10px">
-                    <a class="text-white" href="{{ route('books.edit', $book) }}">Editar</a>
-                </button>
-                <button type="submit" class="btn btn-dark col-md-1" style="margin-left: 10px; margin-bottom: 10px">
-                    <a class="text-white" href="{{ route('books.index') }}">Voltar</a>
-                </button>
+                <a class="btn btn-primary col-md-1" style="margin-left: 10px; margin-bottom: 10px" href="{{ route('books.change', $book) }}">
+                    {{ $book->available? 'Retirar' : 'Devolver' }}
+                </a>
+                <a class="btn btn-dark col-md-1" style="margin-left: 10px; margin-bottom: 10px" href="{{ route('books.edit', $book) }}">
+                    Editar
+                </a>
+                <a class="btn btn-dark col-md-1" style="margin-left: 10px; margin-bottom: 10px" href="{{ route('books.index') }}">
+                    Voltar
+                </a>
                 <form action="{{ route('books.destroy', $book) }}" method="post">
                     @method('delete')
                     @csrf
@@ -31,7 +29,6 @@
                         Excluir
                     </button>
                 </form>
-
             </div>
         </div>
     </body>

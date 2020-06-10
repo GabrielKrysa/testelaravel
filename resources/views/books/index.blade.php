@@ -8,12 +8,12 @@
         </div>
     @endif
     <div class="row" style="margin-left: 10px; margin-bottom: 10px">
-        <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
-            <a class="text-white" href="{{ route('books.create') }}">Cadastrar livro</a>
-        </button>
-        <button type="submit" class="btn btn-dark" style="margin-left: 10px; margin-bottom: 10px">
-            <a class="text-white" href="{{ route('user.books') }}">Meus livros</a>
-        </button>
+        <a class="btn btn-dark col-md-2" style="margin-left: 10px; margin-bottom: 10px" href="{{ route('books.create') }}">
+            Cadastrar livro
+        </a>
+        <a class="btn btn-dark col-md-1" style="margin-left: 10px; margin-bottom: 10px" href="{{ route('user.books') }}">
+            Meus livros
+        </a>
     </div>
     <table class="table">
         <thead class="thead-dark">
