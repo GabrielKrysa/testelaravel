@@ -27,7 +27,6 @@ class BookController extends Controller
             'title' => 'required',
             'author' => 'required',
         ]);
-
         $book = $validateData;
         $book['user_id'] = Auth::user()->id;
         Book::create($book);
